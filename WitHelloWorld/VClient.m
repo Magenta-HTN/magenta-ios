@@ -10,6 +10,8 @@
 
 @implementation VClient
 
-
+-(void)syncAllData {
+    
+}
 
 @end
