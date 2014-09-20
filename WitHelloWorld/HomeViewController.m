@@ -12,11 +12,9 @@
 
 @end
 
-@implementation HomeViewController {
-    UILabel *labelView;
-}
-- (void)viewDidLoad
-{
+@implementation HomeViewController
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.logoLabel.font = [UIFont fontWithName:@"Billabong" size:45];
@@ -39,9 +37,6 @@
     // create the button
     CGRect screen = [UIScreen mainScreen].bounds;
     CGFloat w = 70;
-    
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenHeight = screenRect.size.height;
     
     CGRect rect = CGRectMake(screen.size.width/2 - w/2, 0 , w, w);
 
@@ -78,8 +73,7 @@
      ];
 }
 
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if(buttonIndex == 0) { //YES
         
     } else { //NO
@@ -87,11 +81,11 @@
     }
 }
 
--(void)makeGetElementesRequest {
+- (void)makeGetElementesRequest {
     [[DivClient singletonInstance] syncAllDataWithListener:self];
 }
 
--(BOOL)gestureRecognizer {
+- (BOOL)gestureRecognizer {
     self.exampleView.backgroundColor = [UIColor whiteColor];
     if([@"Examples" isEqualToString:self.examplesLabel.text]) {
         self.examplesLabel.text = @"Elements";
@@ -121,35 +115,27 @@
     return YES;
 }
 
--(void)showRemoveDialog {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
-                                                    message:@"You must be connected to the internet to use this app."
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+- (void)showRemoveDialog {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait"
+                                                    message:@"Are you sure you want to delete this.  This action cannot be undone"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Yes"
+                                          otherButtonTitles:@"No", nil];
     [alert show];
 }
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
--(void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
+- (void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
     if([intent isEqualToString:@"REMOVE"]) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait"
-                                                        message:@"Are you sure you want to delete this.  This action cannot be undone"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Yes"
-                                              otherButtonTitles:@"No", nil];
-        [alert show];
+        [self showRemoveDialog];
     }
     
     if (e) {
         NSLog(@"[Wit] error: %@", [e localizedDescription]);
         return;
-    }
-    if([body isEqualToString:@"Remove"]) {
-        [self showRemoveDialog];
     }
 }
 
