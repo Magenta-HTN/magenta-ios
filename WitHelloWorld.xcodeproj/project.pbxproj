@@ -21,6 +21,8 @@
 		2BB771D318FAA56A00D91DC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB771B218FAA56A00D91DC6 /* UIKit.framework */; };
 		2BB771DB18FAA56A00D91DC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BB771D918FAA56A00D91DC6 /* InfoPlist.strings */; };
 		2BB771DD18FAA56A00D91DC6 /* WitHelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB771DC18FAA56A00D91DC6 /* WitHelloWorldTests.m */; };
+		7606E27819CDC29A0044E21A /* VClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606E27719CDC29A0044E21A /* VClient.m */; };
+		7606E27C19CDC33F0044E21A /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606E27B19CDC33F0044E21A /* NetworkUtil.m */; };
 		942C87D5CE2D44D6A8249520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6DB085499499DB667B0E2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,10 @@
 		2BB771DA18FAA56A00D91DC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BB771DC18FAA56A00D91DC6 /* WitHelloWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WitHelloWorldTests.m; sourceTree = "<group>"; };
 		3FA6DB085499499DB667B0E2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7606E27619CDC29A0044E21A /* VClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VClient.h; sourceTree = "<group>"; };
+		7606E27719CDC29A0044E21A /* VClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VClient.m; sourceTree = "<group>"; };
+		7606E27A19CDC33F0044E21A /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		7606E27B19CDC33F0044E21A /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		DFC9069C64EF4C8DB6B2C56C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,8 @@
 		2BB771B418FAA56A00D91DC6 /* WitHelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				7606E27919CDC2DA0044E21A /* Utils */,
+				7606E27519CDC0CC0044E21A /* Clients */,
 				2BB771BD18FAA56A00D91DC6 /* AppDelegate.h */,
 				2BB771BE18FAA56A00D91DC6 /* AppDelegate.m */,
 				2BB771C018FAA56A00D91DC6 /* Main_iPhone.storyboard */,
@@ -156,6 +164,24 @@
 				2BB771D918FAA56A00D91DC6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7606E27519CDC0CC0044E21A /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				7606E27619CDC29A0044E21A /* VClient.h */,
+				7606E27719CDC29A0044E21A /* VClient.m */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		7606E27919CDC2DA0044E21A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7606E27A19CDC33F0044E21A /* NetworkUtil.h */,
+				7606E27B19CDC33F0044E21A /* NetworkUtil.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB771C818FAA56A00D91DC6 /* HomeViewController.m in Sources */,
+				7606E27C19CDC33F0044E21A /* NetworkUtil.m in Sources */,
+				7606E27819CDC29A0044E21A /* VClient.m in Sources */,
 				2BB771BB18FAA56A00D91DC6 /* main.m in Sources */,
 				2BB771BF18FAA56A00D91DC6 /* AppDelegate.m in Sources */,
 			);
