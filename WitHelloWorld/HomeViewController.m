@@ -121,6 +121,14 @@
     return YES;
 }
 
+-(void)showRemoveDialog {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                    message:@"You must be connected to the internet to use this app."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -139,6 +147,9 @@
     if (e) {
         NSLog(@"[Wit] error: %@", [e localizedDescription]);
         return;
+    }
+    if([body isEqualToString:@"Remove"]) {
+        [self showRemoveDialog];
     }
 }
 
