@@ -1,5 +1,6 @@
 #import "HomeViewController.h"
 #import "DivClient.h"
+#import "ElementCommand.h"
 
 @interface HomeViewController () <UIAlertViewDelegate>
 
@@ -129,14 +130,18 @@
 }
 
 - (void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
-    if([intent isEqualToString:@"REMOVE"]) {
-        [self showRemoveDialog];
-    }
     
     if (e) {
         NSLog(@"[Wit] error: %@", [e localizedDescription]);
         return;
     }
+    
+    if([intent isEqualToString:@"REMOVE"]) {
+        [self showRemoveDialog];
+    }
+    
+    ElementCommand *command = [ElementCommand elementCommandWithIntent:intent withTities:[entities allValues]];
+    //send command yo
 }
 
 @end
