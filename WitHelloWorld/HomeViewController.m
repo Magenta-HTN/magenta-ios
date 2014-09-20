@@ -16,8 +16,12 @@
 
     // create the button
     CGRect screen = [UIScreen mainScreen].bounds;
-    CGFloat w = 100;
-    CGRect rect = CGRectMake(screen.size.width/2 - w/2, 60, w, 100);
+    CGFloat w = 70;
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    
+    CGRect rect = CGRectMake(screen.size.width/2 - w/2, screenHeight - 5 * w/3 , w, w);
 
     WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:rect];
     [self.view addSubview:witButton];
