@@ -19,7 +19,7 @@ static NSURL* baseURL;
     return self;
 }
 
-+ (NSURLRequest *)GETRequestWithPath:(NSString *)path withListener:(NetworkUtilListener *)listener {
++ (NSURLRequest *)GETRequestWithPath:(NSString *)path withListener:(id)listener {
     NSURLComponents *URLComponents = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:NO];
     URLComponents.path = path;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[URLComponents URL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];

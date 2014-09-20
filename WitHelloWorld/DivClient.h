@@ -8,9 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "VClient.h"
+#import "NetworkUtil.h"
 
-@interface DivClient : VClient
+@protocol DivClientListener
+@optional
+-(void)requestSucceeded;
+-(void)requestFailed;
+@end
 
--(void)syncAllData;
+
+@interface DivClient : VClient <NetworkUtilListener>
+
+-(void)syncAllDataWithListener:(id)listener;
++ (id)singletonInstance;
 
 @end

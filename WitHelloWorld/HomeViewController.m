@@ -1,4 +1,5 @@
 #import "HomeViewController.h"
+#import "DivClient.h"
 
 @interface HomeViewController ()
 
@@ -8,12 +9,14 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *exampleTap;
 @property (weak, nonatomic) IBOutlet UILabel *examplesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *logoLabel;
+@property(nonatomic, strong) DivClient *client;
 
 @end
 
-@implementation HomeViewController {
+@implementation HomeViewController 
     UILabel *labelView;
-}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -75,6 +78,7 @@
                          [UIView commitAnimations];
                      }
      ];
+    [self makeGetElementsRequest];
 }
 
 -(BOOL)gestureRecognizer {
@@ -111,11 +115,24 @@
     return UIStatusBarStyleLightContent;
 }
 
+-(void)makeGetElementsRequest {
+    [[DivClient singletonInstance] syncAllDataWithListener:self];
+}
+
 -(void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
     if (e) {
         NSLog(@"[Wit] error: %@", [e localizedDescription]);
         return;
     }
+}
+
+#pragma mark <DivClientListener>
+
+-(void)requestSucceeded {
+    
+}
+-(void)requestFailed {
+    
 }
 
 @end
