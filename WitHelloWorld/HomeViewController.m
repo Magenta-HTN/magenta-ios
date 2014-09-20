@@ -1,18 +1,10 @@
-//
-//  FOOViewController.m
-//  WitHelloWorld
-//
-//  Created by Willy Blandin on 13/04/2014.
-//  Copyright (c) 2014 Wit.AI. All rights reserved.
-//
+#import "HomeViewController.h"
 
-#import "FOOViewController.h"
-
-@interface FOOViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation FOOViewController {
+@implementation HomeViewController {
     UILabel *labelView;
 }
 - (void)viewDidLoad
