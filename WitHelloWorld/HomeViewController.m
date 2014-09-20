@@ -1,12 +1,14 @@
 #import "HomeViewController.h"
+#import "DivClient.h"
 
 @interface HomeViewController ()
-
+    @property(nonatomic, strong) DivClient *client;
 @end
 
-@implementation HomeViewController {
+@implementation HomeViewController 
     UILabel *labelView;
-}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,12 +32,11 @@
     labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, screen.size.width, 50)];
     labelView.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:labelView];
+    [self makeGetElementsRequest];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)makeGetElementsRequest {
+    [[DivClient singletonInstance] syncAllDataWithListener:self];
 }
 
 -(void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
@@ -47,6 +48,15 @@
     labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
 
     [self.view addSubview:labelView];
+}
+
+#pragma mark <DivClientListener>
+
+-(void)requestSucceeded {
+    
+}
+-(void)requestFailed {
+    
 }
 
 @end

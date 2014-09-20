@@ -13,11 +13,30 @@
 
 static NSString *path = @"/div";
 
--(void)syncAllData {
++ (id)singletonInstance {
+    static DivClient *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+-(void)syncAllDataWithListener:(id)listener {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        [NetworkUtil GETRequestWithPath:path] ;
+        [NetworkUtil GETRequestWithPath:path withListener:self];
         
     });
 }
+
+-(void)requestSucceeded {
+    
+}
+
+
+-(void)requestFailed {
+    
+}
+
 
 @end
