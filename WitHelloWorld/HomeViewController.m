@@ -1,4 +1,5 @@
 #import "HomeViewController.h"
+#import "DivClient.h"
 
 @interface HomeViewController ()
 
@@ -75,6 +76,10 @@
                          [UIView commitAnimations];
                      }
      ];
+}
+
+-(void)makeGetElementesRequest {
+    [[DivClient singletonInstance] syncAllDataWithListener:self];
 }
 
 -(BOOL)gestureRecognizer {

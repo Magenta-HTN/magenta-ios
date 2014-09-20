@@ -22,6 +22,8 @@
 		2BB771DB18FAA56A00D91DC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BB771D918FAA56A00D91DC6 /* InfoPlist.strings */; };
 		2BB771DD18FAA56A00D91DC6 /* WitHelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB771DC18FAA56A00D91DC6 /* WitHelloWorldTests.m */; };
 		4104F41619CE17E900ADB336 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104F41519CE17E900ADB336 /* Billabong.ttf */; };
+		769114E419CE290C00EC88EC /* DivClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 769114E319CE290C00EC88EC /* DivClient.m */; };
+		769114E719CE291300EC88EC /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 769114E619CE291300EC88EC /* NetworkUtil.m */; };
 		942C87D5CE2D44D6A8249520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6DB085499499DB667B0E2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,10 @@
 		2BB771DC18FAA56A00D91DC6 /* WitHelloWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WitHelloWorldTests.m; sourceTree = "<group>"; };
 		3FA6DB085499499DB667B0E2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4104F41519CE17E900ADB336 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		769114E219CE290C00EC88EC /* DivClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivClient.h; sourceTree = "<group>"; };
+		769114E319CE290C00EC88EC /* DivClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivClient.m; sourceTree = "<group>"; };
+		769114E519CE291300EC88EC /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		769114E619CE291300EC88EC /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		DFC9069C64EF4C8DB6B2C56C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +126,8 @@
 		2BB771B418FAA56A00D91DC6 /* WitHelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				769114E919CE2D0E00EC88EC /* Clients */,
+				769114E819CE2D0300EC88EC /* Utils */,
 				2BB771BD18FAA56A00D91DC6 /* AppDelegate.h */,
 				2BB771BE18FAA56A00D91DC6 /* AppDelegate.m */,
 				2BB771C018FAA56A00D91DC6 /* Main_iPhone.storyboard */,
@@ -167,6 +175,24 @@
 				4104F41519CE17E900ADB336 /* Billabong.ttf */,
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		769114E819CE2D0300EC88EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				769114E519CE291300EC88EC /* NetworkUtil.h */,
+				769114E619CE291300EC88EC /* NetworkUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		769114E919CE2D0E00EC88EC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				769114E219CE290C00EC88EC /* DivClient.h */,
+				769114E319CE290C00EC88EC /* DivClient.m */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769114E419CE290C00EC88EC /* DivClient.m in Sources */,
+				769114E719CE291300EC88EC /* NetworkUtil.m in Sources */,
 				2BB771C818FAA56A00D91DC6 /* HomeViewController.m in Sources */,
 				2BB771BB18FAA56A00D91DC6 /* main.m in Sources */,
 				2BB771BF18FAA56A00D91DC6 /* AppDelegate.m in Sources */,
