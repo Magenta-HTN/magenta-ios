@@ -1,7 +1,7 @@
 #import "HomeViewController.h"
 #import "DivClient.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *exampleView;
 @property (weak, nonatomic) IBOutlet UIView *elementsView;
@@ -78,6 +78,15 @@
      ];
 }
 
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if(buttonIndex == 0) { //YES
+        
+    } else { //NO
+        
+    }
+}
+
 -(void)makeGetElementesRequest {
     [[DivClient singletonInstance] syncAllDataWithListener:self];
 }
@@ -117,6 +126,16 @@
 }
 
 -(void)witDidGraspIntent:(NSString *)intent entities:(NSDictionary *)entities body:(NSString *)body error:(NSError *)e {
+    if([intent isEqualToString:@"REMOVE"]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait"
+                                                        message:@"Are you sure you want to delete this.  This action cannot be undone"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Yes"
+                                              otherButtonTitles:@"No", nil];
+        [alert show];
+    }
+    
     if (e) {
         NSLog(@"[Wit] error: %@", [e localizedDescription]);
         return;
