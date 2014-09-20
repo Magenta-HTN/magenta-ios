@@ -126,10 +126,8 @@
 		2BB771B418FAA56A00D91DC6 /* WitHelloWorld */ = {
 			isa = PBXGroup;
 			children = (
-				769114E519CE291300EC88EC /* NetworkUtil.h */,
-				769114E619CE291300EC88EC /* NetworkUtil.m */,
-				769114E219CE290C00EC88EC /* DivClient.h */,
-				769114E319CE290C00EC88EC /* DivClient.m */,
+				769114E919CE2D0E00EC88EC /* Clients */,
+				769114E819CE2D0300EC88EC /* Utils */,
 				2BB771BD18FAA56A00D91DC6 /* AppDelegate.h */,
 				2BB771BE18FAA56A00D91DC6 /* AppDelegate.m */,
 				2BB771C018FAA56A00D91DC6 /* Main_iPhone.storyboard */,
@@ -177,6 +175,24 @@
 				4104F41519CE17E900ADB336 /* Billabong.ttf */,
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		769114E819CE2D0300EC88EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				769114E519CE291300EC88EC /* NetworkUtil.h */,
+				769114E619CE291300EC88EC /* NetworkUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		769114E919CE2D0E00EC88EC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				769114E219CE290C00EC88EC /* DivClient.h */,
+				769114E319CE290C00EC88EC /* DivClient.m */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
