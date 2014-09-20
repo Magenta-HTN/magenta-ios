@@ -1,5 +1,5 @@
 //
-//  VClient.h
+//  DivClient.h
 //  WitHelloWorld
 //
 //  Created by Saif Jamil Khan on 2014-09-20.
@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VClient.h"
 
-@interface VClient : NSObject
+@interface DivClient : VClient
 
 -(void)syncAllData;
 

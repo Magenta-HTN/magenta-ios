@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkUtil : NSObject
+@interface  NetworkUtilListener : NSObject
 
-@property(nonatomic, strong) NSURL* baseURL;
+-(void)requestSucceeded;
+-(void)requestFailed;
+
+@end
+
+@interface NetworkUtil : NSObject <NSURLConnectionDelegate>
+
++ (NSURLRequest *)GETRequestWithPath:(NSString *)path withListener:(NetworkUtilListener *)listener;
 
 @end
