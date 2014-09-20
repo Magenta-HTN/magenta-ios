@@ -46,22 +46,22 @@
     [UIView animateWithDuration:1
                      animations:^{
                          CGRect frame = witButton.frame;
-                         frame.origin.y += 400;
+                         frame.origin.y += 439;
                          witButton.frame = frame;
                      }
                      completion:^(BOOL finished){
                          
                          self.examplesLabel.text = @"Examples";
-                         self.examplesView.hidden = YES;
-                         self.elementsView.hidden = NO;
+                         self.examplesView.hidden = NO;
+                         self.elementsView.hidden = YES;
                          self.logoLabel.hidden = NO;
-                         self.elementsView.alpha = 0;
+                         self.examplesView.alpha = 0;
                          self.logoLabel.alpha = 0;
                          
                          [UIView beginAnimations:@"fade in" context:nil];
                          [UIView setAnimationDuration:0.5];
-                         self.elementsView.alpha = 1.0;
-                         [self.elementsView setBackgroundColor:[UIColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.0]];
+                         self.examplesView.alpha = 1.0;
+                         [self.examplesView setBackgroundColor:[UIColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.0]];
                          [UIView commitAnimations];
                          
                          [UIView beginAnimations:@"fade in" context:nil];

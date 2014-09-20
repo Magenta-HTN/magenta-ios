@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czG-gF-s2P" userLabel="examplesView">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czG-gF-s2P" userLabel="examplesView">
                                 <rect key="frame" x="80" y="516" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -42,7 +42,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-Ex-pa6">
-                                <rect key="frame" x="30" y="85" width="260" height="273"/>
+                                <rect key="frame" x="30" y="115" width="260" height="273"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Append a button into container 2 with text click me with background color red&quot;" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-cV-uGa">
@@ -83,7 +83,7 @@
                                 </subviews>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Magenta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-xZ-xea">
-                                <rect key="frame" x="89" y="25" width="171" height="61"/>
+                                <rect key="frame" x="89" y="32" width="171" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -94,11 +94,11 @@
                         <constraints>
                             <constraint firstItem="7ui-EI-sbo" firstAttribute="top" secondItem="FwX-q7-2ux" secondAttribute="bottom" constant="54" id="1l9-Vh-9I6"/>
                             <constraint firstItem="tOS-2j-p77" firstAttribute="top" secondItem="7ui-EI-sbo" secondAttribute="bottom" constant="210" id="F2J-Eu-e8X"/>
-                            <constraint firstItem="fQ5-Ex-pa6" firstAttribute="top" secondItem="FwX-q7-2ux" secondAttribute="bottom" constant="65" id="OHY-NM-sa8"/>
+                            <constraint firstItem="fQ5-Ex-pa6" firstAttribute="top" secondItem="FwX-q7-2ux" secondAttribute="bottom" constant="95" id="OHY-NM-sa8"/>
                             <constraint firstAttribute="trailing" secondItem="fQ5-Ex-pa6" secondAttribute="trailing" constant="30" id="UeL-qe-g4g"/>
                             <constraint firstAttribute="trailing" secondItem="7ui-EI-sbo" secondAttribute="trailing" constant="30" id="p7P-8j-SuL"/>
                             <constraint firstItem="7ui-EI-sbo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="uya-EU-q10"/>
-                            <constraint firstItem="tOS-2j-p77" firstAttribute="top" secondItem="fQ5-Ex-pa6" secondAttribute="bottom" constant="210" id="vjg-0u-DQi"/>
+                            <constraint firstItem="tOS-2j-p77" firstAttribute="top" secondItem="fQ5-Ex-pa6" secondAttribute="bottom" constant="180" id="vjg-0u-DQi"/>
                             <constraint firstItem="fQ5-Ex-pa6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="zcJ-v1-G4C"/>
                         </constraints>
                     </view>
