@@ -74,9 +74,9 @@
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if(buttonIndex == 0) { //YES
+	if(buttonIndex == 0) { //NO
         
-    } else { //NO
+    } else { //YES
         
     }
 }
@@ -116,11 +116,11 @@
 }
 
 - (void)showRemoveDialog {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait"
-                                                    message:@"Are you sure you want to delete this.  This action cannot be undone"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
+                                                    message:@"Are you sure you want to delete this. This action cannot be undone"
                                                    delegate:self
-                                          cancelButtonTitle:@"Yes"
-                                          otherButtonTitles:@"No", nil];
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes", nil];
     [alert show];
 }
 
