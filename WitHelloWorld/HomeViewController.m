@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet UIView *examplesView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *exampleTap;
 @property (weak, nonatomic) IBOutlet UILabel *examplesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *logoLabel;
 
 @end
 
@@ -17,17 +18,17 @@
 {
     [super viewDidLoad];
     
+    self.logoLabel.font = [UIFont fontWithName:@"Billabong" size:45];
+    self.logoLabel.hidden = YES;
+    
     self.elementsView.hidden = YES;
     self.examplesView.hidden = YES;
     
     self.exampleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer)];
-    
-    [self.exampleView addGestureRecognizer:self.self.exampleTap];
-    
-    // border radius
-    [self.exampleView.layer setCornerRadius:15.0f];
+    [self.exampleView addGestureRecognizer:self.exampleTap];
     
     // border
+    [self.exampleView.layer setCornerRadius:15.0f];
     [self.exampleView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [self.exampleView.layer setBorderWidth:1.5f];
 
@@ -57,12 +58,20 @@
                          self.examplesLabel.text = @"Examples";
                          self.examplesView.hidden = YES;
                          self.elementsView.hidden = NO;
+                         self.logoLabel.hidden = NO;
                          self.elementsView.alpha = 0;
+                         self.logoLabel.alpha = 0;
                          
                          [UIView beginAnimations:@"fade in" context:nil];
                          [UIView setAnimationDuration:0.5];
                          self.elementsView.alpha = 1.0;
                          [self.elementsView setBackgroundColor:[UIColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.0]];
+                         [UIView commitAnimations];
+                         
+                         [UIView beginAnimations:@"fade in" context:nil];
+                         [UIView setAnimationDuration:0.5];
+                         self.logoLabel.alpha = 1.0;
+                         [self.logoLabel setBackgroundColor:[UIColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.0]];
                          [UIView commitAnimations];
                      }
      ];
@@ -98,8 +107,7 @@
     return YES;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
