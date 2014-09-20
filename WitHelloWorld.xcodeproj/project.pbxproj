@@ -23,6 +23,7 @@
 		2BB771DD18FAA56A00D91DC6 /* WitHelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB771DC18FAA56A00D91DC6 /* WitHelloWorldTests.m */; };
 		7606E27819CDC29A0044E21A /* VClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606E27719CDC29A0044E21A /* VClient.m */; };
 		7606E27C19CDC33F0044E21A /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606E27B19CDC33F0044E21A /* NetworkUtil.m */; };
+		4104F41619CE17E900ADB336 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104F41519CE17E900ADB336 /* Billabong.ttf */; };
 		942C87D5CE2D44D6A8249520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6DB085499499DB667B0E2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		7606E27719CDC29A0044E21A /* VClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VClient.m; sourceTree = "<group>"; };
 		7606E27A19CDC33F0044E21A /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
 		7606E27B19CDC33F0044E21A /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
+		4104F41519CE17E900ADB336 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		DFC9069C64EF4C8DB6B2C56C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 		2BB771B518FAA56A00D91DC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4104F41319CE156F00ADB336 /* Font */,
 				2BB771B618FAA56A00D91DC6 /* WitHelloWorld-Info.plist */,
 				2BB771B718FAA56A00D91DC6 /* InfoPlist.strings */,
 				2BB771BA18FAA56A00D91DC6 /* main.m */,
@@ -182,6 +185,11 @@
 				7606E27B19CDC33F0044E21A /* NetworkUtil.m */,
 			);
 			name = Utils;
+		4104F41319CE156F00ADB336 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4104F41519CE17E900ADB336 /* Billabong.ttf */,
+			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +274,7 @@
 				2BB771CA18FAA56A00D91DC6 /* Images.xcassets in Resources */,
 				2BB771C218FAA56A00D91DC6 /* Main_iPhone.storyboard in Resources */,
 				2BB771B918FAA56A00D91DC6 /* InfoPlist.strings in Resources */,
+				4104F41619CE17E900ADB336 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
