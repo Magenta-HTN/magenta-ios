@@ -1,7 +1,7 @@
 #import "HomeViewController.h"
 #import "DivClient.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () 
 
 @property (weak, nonatomic) IBOutlet UIView *exampleView;
 @property (weak, nonatomic) IBOutlet UIView *elementsView;
