@@ -3,7 +3,8 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
-    <scenes>        <!--Home View Controller-->
+    <scenes>
+        <!--Home View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="HomeViewController" sceneMemberID="viewController">
@@ -15,21 +16,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Divs:" translatesAutoresizingMaskIntoConstraints="NO" id="JcY-1o-YIc">
-                                <rect key="frame" x="0.0" y="61" width="320" height="35"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="qio-Qo-dkE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czG-gF-s2P" userLabel="examplesView">
+                                <rect key="frame" x="80" y="516" width="160" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Examples" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-08-dV6" userLabel="examplesLabel">
+                                        <rect key="frame" x="46" y="4" width="81" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="llI-Wj-2WD" appends="YES" id="hsM-GS-a0w"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-EI-sbo">
+                                <rect key="frame" x="30" y="74" width="260" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-Ex-pa6">
+                                <rect key="frame" x="30" y="74" width="260" height="284"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Append a button into container 2 with text click me with background color red&quot;" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-cV-uGa">
+                                        <rect key="frame" x="10" y="45" width="240" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Append a button into container 2 with text click me with background color red&quot;" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="LcZ-53-vqe">
+                                        <rect key="frame" x="10" y="125" width="240" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Append a button into container 2 with text click me with background color red&quot;" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="jJd-1k-qaW">
+                                        <rect key="frame" x="10" y="199" width="240" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.34509803921568627" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="7ui-EI-sbo" firstAttribute="top" secondItem="FwX-q7-2ux" secondAttribute="bottom" constant="54" id="1l9-Vh-9I6"/>
+                            <constraint firstItem="tOS-2j-p77" firstAttribute="top" secondItem="7ui-EI-sbo" secondAttribute="bottom" constant="210" id="F2J-Eu-e8X"/>
+                            <constraint firstItem="fQ5-Ex-pa6" firstAttribute="top" secondItem="FwX-q7-2ux" secondAttribute="bottom" constant="54" id="OHY-NM-sa8"/>
+                            <constraint firstAttribute="trailing" secondItem="fQ5-Ex-pa6" secondAttribute="trailing" constant="30" id="UeL-qe-g4g"/>
+                            <constraint firstAttribute="trailing" secondItem="7ui-EI-sbo" secondAttribute="trailing" constant="30" id="p7P-8j-SuL"/>
+                            <constraint firstItem="7ui-EI-sbo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="uya-EU-q10"/>
+                            <constraint firstItem="tOS-2j-p77" firstAttribute="top" secondItem="fQ5-Ex-pa6" secondAttribute="bottom" constant="210" id="vjg-0u-DQi"/>
+                            <constraint firstItem="fQ5-Ex-pa6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="zcJ-v1-G4C"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="elementsView" destination="7ui-EI-sbo" id="MHe-ah-xnM"/>
+                        <outlet property="exampleTap" destination="llI-Wj-2WD" id="VOi-BU-SaP"/>
+                        <outlet property="exampleView" destination="czG-gF-s2P" id="f39-4c-Igo"/>
+                        <outlet property="examplesLabel" destination="cSH-08-dV6" id="LRF-nJ-Eiu"/>
+                        <outlet property="examplesView" destination="fQ5-Ex-pa6" id="XH1-ut-s2E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="llI-Wj-2WD"/>
             </objects>
+            <point key="canvasLocation" x="-234" y="-28"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="320" height="480"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
