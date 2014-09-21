@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *exampleTap;
 @property (weak, nonatomic) IBOutlet UILabel *examplesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *logoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inputLabel;
 
 @end
 
@@ -158,6 +159,8 @@
         }
     }
     
+    self.inputLabel.text = body;
+    
     NSString *type = [[entities objectForKey:@"type"] objectForKey:@"value"];
     NSString *html = [[entities objectForKey:@"html"] objectForKey:@"value"];
     NSInteger parent = [[[entities objectForKey:@"parent"] objectForKey:@"value"] intValue];
@@ -192,6 +195,7 @@
             color.value = [[entities objectForKey:@"color"] objectForKey:@"value"];
         }
     }
+    
     NSMutableArray *styles = [NSMutableArray array];
     
     if(backgroundColor != nil) {
