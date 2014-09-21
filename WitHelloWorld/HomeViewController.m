@@ -145,29 +145,24 @@
     NSString *html = [[entities objectForKey:@"html"] objectForKey:@"value"];
     NSInteger parent = [[[entities objectForKey:@"parent"] objectForKey:@"value"] intValue];
     NSInteger elementID = [[[entities objectForKey:@"elementID"] objectForKey:@"value"] intValue];
-//    
+
 //    NSString *backgroundColor = [[entities objectForKey:@"background-color"] objectForKey:@"value"];
 //    NSString *fontSize = [[entities objectForKey:@"font-size"] objectForKey:@"value"];
 //    NSString *fontWeight = [[entities objectForKey:@"font-weight"] objectForKey:@"value"];
 //    NSString *borderRadius = [[entities objectForKey:@"border-radius"] objectForKey:@"value"];
+//    NSArray *styles = @[backgroundColor, fontSize, fontWeight, borderRadius];
 
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
-//    NSArray *styles = @[backgroundColor, fontSize, fontWeight, borderRadius];
     
     Element *command = [Element elementCommandWithIntent:intent withType:type withHTML:html withParent:parent withElementID:elementID withStyles:nil];
     NSLog(@"%@", command);
     
-//    for(int i = 0; i < 5; i++) {
-//        NSDictionary *params = @ {[NSString stringWithFormat:@"best %d", i] :[NSString stringWithFormat:@"best %d", i], @"pwd" :@"behaviour" };
-        [manager POST:@"http://hack-magenta.herokuapp.com/action" parameters:command success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
-//    }
+    [manager POST:@"http://hack-magenta.herokuapp.com/action" parameters:[MTLJSONAdapter JSONDictionaryFromModel:command] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 @end
