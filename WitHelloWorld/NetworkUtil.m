@@ -14,7 +14,7 @@ static NSURL* baseURL;
 
 - (instancetype)init{
     if (self = [super init]) {
-        baseURL = [NSURL URLWithString:@""];
+        baseURL = [NSURL URLWithString:@"http://hack-magenta.herokuapp.com/action"];
     }
     return self;
 }
