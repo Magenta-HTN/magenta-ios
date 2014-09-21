@@ -3,6 +3,7 @@
 #import "Element.h"
 #import <AFNetworking/AFNetworking.h>
 #import "Styling.h"
+#import "RemoveObject.h"
 
 @interface HomeViewController () <UIAlertViewDelegate>
 
@@ -80,7 +81,19 @@
 	if(buttonIndex == 0) { //NO
         
     } else { //YES
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         
+        RemoveObject *command = [RemoveObject elementCommandWithIntent:@"REMOVE" withID:[NSNumber numberWithInt: alertView.tag]];
+     
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+        
+        [manager POST:@"http://hack-magenta.herokuapp.com/action" parameters:[MTLJSONAdapter JSONDictionaryFromModel:command] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+
     }
 }
 
@@ -118,12 +131,13 @@
     return YES;
 }
 
-- (void)showRemoveDialog {
+- (void)showRemoveDialogWithId: (NSNumber *)identity {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
                                                     message:@"Are you sure you want to delete this. This action cannot be undone"
                                                    delegate:self
                                           cancelButtonTitle:@"No"
                                           otherButtonTitles:@"Yes", nil];
+    alert.tag = identity.integerValue;
     [alert show];
 }
 
@@ -139,7 +153,9 @@
     }
     
     if([intent isEqualToString:@"REMOVE"]) {
-        [self showRemoveDialog];
+        if([entities objectForKey:@"elementID"] != nil) {
+            [self showRemoveDialogWithId:[[entities objectForKey:@"elementID"]objectForKey:@"value"]];
+        }
     }
     
     NSString *type = [[entities objectForKey:@"type"] objectForKey:@"value"];

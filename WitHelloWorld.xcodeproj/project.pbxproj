@@ -24,6 +24,7 @@
 		4104F41619CE17E900ADB336 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104F41519CE17E900ADB336 /* Billabong.ttf */; };
 		4172847219CE435F0026E1B6 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172847119CE435F0026E1B6 /* Element.m */; };
 		4172847819CE88070026E1B6 /* Styling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172847719CE88070026E1B6 /* Styling.m */; };
+		7644D29619CF151900466867 /* RemoveObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644D29519CF151900466867 /* RemoveObject.m */; };
 		769114E419CE290C00EC88EC /* DivClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 769114E319CE290C00EC88EC /* DivClient.m */; };
 		769114E719CE291300EC88EC /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 769114E619CE291300EC88EC /* NetworkUtil.m */; };
 		942C87D5CE2D44D6A8249520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6DB085499499DB667B0E2 /* libPods.a */; };
@@ -65,6 +66,8 @@
 		4172847119CE435F0026E1B6 /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
 		4172847619CE88070026E1B6 /* Styling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Styling.h; sourceTree = "<group>"; };
 		4172847719CE88070026E1B6 /* Styling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Styling.m; sourceTree = "<group>"; };
+		7644D29419CF151900466867 /* RemoveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveObject.h; sourceTree = "<group>"; };
+		7644D29519CF151900466867 /* RemoveObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoveObject.m; sourceTree = "<group>"; };
 		769114E219CE290C00EC88EC /* DivClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivClient.h; sourceTree = "<group>"; };
 		769114E319CE290C00EC88EC /* DivClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivClient.m; sourceTree = "<group>"; };
 		769114E519CE291300EC88EC /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				4172847119CE435F0026E1B6 /* Element.m */,
 				4172847619CE88070026E1B6 /* Styling.h */,
 				4172847719CE88070026E1B6 /* Styling.m */,
+				7644D29419CF151900466867 /* RemoveObject.h */,
+				7644D29519CF151900466867 /* RemoveObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				4172847219CE435F0026E1B6 /* Element.m in Sources */,
 				4172847819CE88070026E1B6 /* Styling.m in Sources */,
 				2BB771BB18FAA56A00D91DC6 /* main.m in Sources */,
+				7644D29619CF151900466867 /* RemoveObject.m in Sources */,
 				2BB771BF18FAA56A00D91DC6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
