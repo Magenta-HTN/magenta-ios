@@ -2,6 +2,7 @@
 #import "DivClient.h"
 #import "Element.h"
 #import <AFNetworking/AFNetworking.h>
+#import "Styling.h"
 
 @interface HomeViewController () <UIAlertViewDelegate>
 
@@ -145,24 +146,73 @@
     NSString *html = [[entities objectForKey:@"html"] objectForKey:@"value"];
     NSInteger parent = [[[entities objectForKey:@"parent"] objectForKey:@"value"] intValue];
     NSInteger elementID = [[[entities objectForKey:@"elementID"] objectForKey:@"value"] intValue];
-
-//    NSString *backgroundColor = [[entities objectForKey:@"background-color"] objectForKey:@"value"];
-//    NSString *fontSize = [[entities objectForKey:@"font-size"] objectForKey:@"value"];
-//    NSString *fontWeight = [[entities objectForKey:@"font-weight"] objectForKey:@"value"];
-//    NSString *borderRadius = [[entities objectForKey:@"border-radius"] objectForKey:@"value"];
-//    NSArray *styles = @[backgroundColor, fontSize, fontWeight, borderRadius];
-
+    
+    Styling *color;
+    Styling *backgroundColor;
+    Styling *fontSize;
+    Styling *fontWeight;
+    Styling *borderRadius;
+    
+    if(entities != nil && [entities count] > 0) {
+        if ([entities objectForKey:@"background_color"] != nil) {
+            backgroundColor = [[Styling alloc] init];
+            backgroundColor.property = @"background-color";
+            backgroundColor.value = [[entities objectForKey:@"background_color"] objectForKey:@"value"];
+        } else if ([entities objectForKey:@"font_size"] != nil) {
+            fontSize = [[Styling alloc] init];
+            fontSize.property = @"font-size";
+            fontSize.value = [[entities objectForKey:@"font_size"] objectForKey:@"value"];
+        } else if ([entities objectForKey:@"font_weight"] != nil) {
+            fontWeight = [[Styling alloc] init];
+            fontWeight.property = @"font-weight";
+            fontWeight.value = [[entities objectForKey:@"font_weight"] objectForKey:@"value"];
+        } else if ([entities objectForKey:@"border_radius"] != nil) {
+            borderRadius = [[Styling alloc] init];
+            borderRadius.property = @"border-radius";
+            borderRadius.value = [[entities objectForKey:@"border_radius"] objectForKey:@"value"];
+        } else if ([entities objectForKey:@"color"] != nil) {
+            color = [[Styling alloc] init];
+            color.property = @"color";
+            color.value = [[entities objectForKey:@"color"] objectForKey:@"value"];
+        }
+    }
+    NSMutableArray *styles = [NSMutableArray array];
+    
+    if(backgroundColor != nil) {
+        [self addObject:[MTLJSONAdapter JSONDictionaryFromModel:backgroundColor] toArray:styles];
+    }
+    if(fontSize != nil) {
+    [self addObject:[MTLJSONAdapter JSONDictionaryFromModel:fontSize] toArray:styles];
+    }
+    if(fontWeight != nil) {
+        [self addObject:[MTLJSONAdapter JSONDictionaryFromModel:fontWeight] toArray:styles];
+    }
+    if(borderRadius != nil) {
+            [self addObject:[MTLJSONAdapter JSONDictionaryFromModel:borderRadius] toArray:styles];
+    }
+    if(color != nil) {
+        [self addObject:[MTLJSONAdapter JSONDictionaryFromModel:color] toArray:styles];
+    }
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    Element *command = [Element elementCommandWithIntent:intent withType:type withHTML:html withParent:parent withElementID:elementID withStyles:nil];
+    Element *command = [Element elementCommandWithIntent:intent withType:type withHTML:html withParent:parent withElementID:elementID withStyles:styles];
     NSLog(@"%@", command);
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
     [manager POST:@"http://hack-magenta.herokuapp.com/action" parameters:[MTLJSONAdapter JSONDictionaryFromModel:command] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)addObject:(id)object toArray:(NSMutableArray*)array {
+    if(object != nil && object != NULL) {
+        [array addObject:object];
+    }
 }
 
 @end

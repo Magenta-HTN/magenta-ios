@@ -16,13 +16,14 @@
                      withHTML:(NSString *)html
                    withParent:(NSInteger)parent
                 withElementID:(NSInteger)elementID
-                    withStyles:(NSArray *)styles {
+                    withStyles:(NSMutableArray *)styles {
     Element *command = [[Element alloc] init];
     command.intent = intent;
     command.type = type;
     command.html = html;
     command.parent = parent;
     command.elementID = elementID;
+    command.styles = styles;
     
     return command;
 }
