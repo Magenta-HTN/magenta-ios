@@ -1,6 +1,7 @@
 #import "HomeViewController.h"
 #import "DivClient.h"
 #import "Element.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface HomeViewController () <UIAlertViewDelegate>
 
@@ -145,15 +146,29 @@
     NSInteger parent = [[[entities objectForKey:@"parent"] objectForKey:@"value"] intValue];
     NSInteger elementID = [[[entities objectForKey:@"elementID"] objectForKey:@"value"] intValue];
     
-    NSString *backgroundColor = [[entities objectForKey:@"background-color"] objectForKey:@"value"];
-    NSString *fontSize = [[entities objectForKey:@"font-size"] objectForKey:@"value"];
-    NSString *fontWeight = [[entities objectForKey:@"font-weight"] objectForKey:@"value"];
-    NSString *borderRadius = [[entities objectForKey:@"border-radius"] objectForKey:@"value"];
+//    NSString *backgroundColor = [[entities objectForKey:@"background-color"] objectForKey:@"value"];
+//    NSString *fontSize = [[entities objectForKey:@"font-size"] objectForKey:@"value"];
+//    NSString *fontWeight = [[entities objectForKey:@"font-weight"] objectForKey:@"value"];
+//    NSString *borderRadius = [[entities objectForKey:@"border-radius"] objectForKey:@"value"];
+//    
+//    NSArray *styles = @[backgroundColor, fontSize, fontWeight, borderRadius];
+//    
+
+    Element *command = [Element elementCommandWithIntent:intent withType:type withHTML:html withParent:parent withElementID:elementID withStyles:nil];
     
-    NSArray *styles = @[backgroundColor, fontSize, fontWeight, borderRadius];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    Element *command = [Element elementCommandWithIntent:intent withType:type withHTML:html withParent:parent withElementID:elementID withStyles:styles];
     NSLog(@"%@", command);
+    
+//    for(int i = 0; i < 5; i++) {
+//        NSDictionary *params = @ {[NSString stringWithFormat:@"best %d", i] :[NSString stringWithFormat:@"best %d", i], @"pwd" :@"behaviour" };
+        [manager POST:@"http://hack-magenta.herokuapp.com/action" parameters:command success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+//    }
 }
 
 @end
