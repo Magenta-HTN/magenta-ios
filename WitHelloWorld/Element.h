@@ -1,18 +1,20 @@
-//
-//  Element.h
-//  WitHelloWorld
-//
-//  Created by Saif Jamil Khan on 2014-09-20.
-//  Copyright (c) 2014 Wit.AI. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
 
 @interface Element : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy, readonly) NSURL *HTMLURL;
-@property (nonatomic, copy, readonly) NSNumber *number;
+@property (nonatomic, strong) NSString *intent;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *html;
+@property (nonatomic, assign) NSInteger parent;
+@property (nonatomic, assign) NSInteger elementID;
+@property (nonatomic, strong) NSArray *styles;
+
++ (id)elementCommandWithIntent:(NSString *)intent
+                      withType:(NSString *)type
+                      withHTML:(NSString *)html
+                    withParent:(NSInteger)parent
+                 withElementID:(NSInteger)elementID
+                    withStyles:(NSArray *)styles;
 
 @end
-    
